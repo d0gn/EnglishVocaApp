@@ -1,6 +1,7 @@
+import 'package:english/Favoritevaca.dart';
 import 'package:flutter/material.dart';
-import 'voca.dart';
-import 'eng.dart';
+
+
 class Favorite extends StatefulWidget {
   const Favorite({Key? key}) : super(key: key);
 
@@ -25,30 +26,15 @@ class _FavoriteState extends State<Favorite> {
                     color: Colors.red,
                     margin: EdgeInsets.all(15),
                     child: ElevatedButton(
-                        child: Text('좋아하는 1번'),
+                        child: Text('즐겨찾기 단어'),
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Voca()),
+                            MaterialPageRoute(builder: (context) => Favoritevoca()),
                           );
                         }
                     ),
                   ),
-                  Container(
-                    height: 150,
-                    width: 400,
-                    color: Colors.red,
-                    margin: EdgeInsets.all(15),
-                    child: ElevatedButton(
-                        child: Text('좋아하는 2번'),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Voca()),
-                          );
-                        }
-                    ),
-                  )
                 ],
               ),
             ),

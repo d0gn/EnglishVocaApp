@@ -20,7 +20,6 @@ class _InterfaceState extends State<Interface> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      print(_selectedIndex);
     });
   }
 
@@ -59,4 +58,3 @@ class _InterfaceState extends State<Interface> {
     super.dispose();
   }
 }
-// body: 리스트이름[인덱스이름] 이게 중요하다 이게 있어야 바뀐다

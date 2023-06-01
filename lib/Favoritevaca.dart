@@ -1,41 +1,29 @@
 import 'package:english/Word.dart';
 import 'package:english/sample.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
-class Voca extends StatefulWidget {
-  const Voca({Key? key}) : super(key: key);
+class Favoritevoca extends StatefulWidget {
+  const Favoritevoca({Key? key}) : super(key: key);
 
   @override
-  State<Voca> createState() => _VocaState();
+  State<Favoritevoca> createState() => _FavoritevocaState();
 }
 
 
-class _VocaState extends State<Voca> {
+class _FavoritevocaState extends State<Favoritevoca> {
 
-  // GET 호출
-  // 응답데이터(JSON) 파싱 -> List<Word>로 변경
-
-  // List<Word> words = sampleData.map((e) => new Word(e["word"]!, e["mean"]!)).toList();
-  // List<Word> words = [
-  //   Word('apple', '사과'),
-  //   Word('apple', '바나나'),
-  // ];
-
-
-
-  int counter = 0;
+  int fcounter = 0;
   void addcounter () {
     setState(() {
-      if (counter < words.length-1) {
-        counter ++;
+      if (fcounter < Favoritewords.length-1) {
+        fcounter ++;
       }
     });
   }
   void removecounter () {
     setState(() {
-      if (counter > 0) {
-        counter --;
+      if (fcounter > 0) {
+        fcounter --;
       }
     });
   }
@@ -45,9 +33,13 @@ class _VocaState extends State<Voca> {
     });
   }
 
-  void addfavorite () {
-    Favoritewords.add(words[counter]);
+  void removefavorite () {
+    setState(() {
+      Favoritewords.removeAt(fcounter);
+      fcounter --;
+    });
   }
+
 
 
   @override
@@ -71,7 +63,7 @@ class _VocaState extends State<Voca> {
               height: 150, width: 400, color: Colors.green, margin: EdgeInsets.fromLTRB(20, 130, 20, 0), // 나중에 비율로 바꾸자
               child: Align(
                 alignment: Alignment.center,
-                child: Text(words[counter].englishWord, style: TextStyle(fontSize: 40)),
+                child: Text(Favoritewords[fcounter].englishWord, style: TextStyle(fontSize: 40)),
               ),
             ),
             Container(
@@ -79,7 +71,7 @@ class _VocaState extends State<Voca> {
               child:
               Align(
                 alignment: Alignment.center,
-                child: Text(words[counter].mean, style: TextStyle(fontSize: 30),
+                child: Text(Favoritewords[fcounter].mean, style: TextStyle(fontSize: 30),
                 ),
               ),
             ),
@@ -106,8 +98,8 @@ class _VocaState extends State<Voca> {
                   onPressed: shuffle,
                   child: Text('셔플')),
               ElevatedButton(
-                  onPressed: addfavorite,
-                  child: Text('즐겨 찾기')),
+                  onPressed: removefavorite,
+                  child: Text('즐찾 해제')),
               ElevatedButton(
                   onPressed: addcounter,
                   child: Text('다음')),
