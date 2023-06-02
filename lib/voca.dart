@@ -2,6 +2,7 @@ import 'package:english/Word.dart';
 import 'package:english/sample.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'eng.dart';
 
 class Voca extends StatefulWidget {
   const Voca({Key? key}) : super(key: key);
@@ -9,7 +10,6 @@ class Voca extends StatefulWidget {
   @override
   State<Voca> createState() => _VocaState();
 }
-
 
 class _VocaState extends State<Voca> {
 
@@ -27,7 +27,7 @@ class _VocaState extends State<Voca> {
   int counter = 0;
   void addcounter () {
     setState(() {
-      if (counter < words.length-1) {
+      if (counter < test.length-1) {
         counter ++;
       }
     });
@@ -41,12 +41,12 @@ class _VocaState extends State<Voca> {
   }
   void shuffle () {
     setState(() {
-      words.shuffle();
+      test.shuffle();
     });
   }
 
   void addfavorite () {
-    Favoritewords.add(words[counter]);
+    Favoritewords.add(test[counter]);
   }
 
 
@@ -71,7 +71,7 @@ class _VocaState extends State<Voca> {
               height: 150, width: 400, color: Colors.green, margin: EdgeInsets.fromLTRB(20, 130, 20, 0), // 나중에 비율로 바꾸자
               child: Align(
                 alignment: Alignment.center,
-                child: Text(words[counter].englishWord, style: TextStyle(fontSize: 40)),
+                child: Text(test[counter].englishWord, style: TextStyle(fontSize: 40)),
               ),
             ),
             Container(
@@ -79,7 +79,7 @@ class _VocaState extends State<Voca> {
               child:
               Align(
                 alignment: Alignment.center,
-                child: Text(words[counter].mean, style: TextStyle(fontSize: 30),
+                child: Text(test[counter].mean, style: TextStyle(fontSize: 30),
                 ),
               ),
             ),

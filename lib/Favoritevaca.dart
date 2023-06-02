@@ -29,7 +29,7 @@ class _FavoritevocaState extends State<Favoritevoca> {
   }
   void shuffle () {
     setState(() {
-      words.shuffle();
+      test.shuffle();
     });
   }
 

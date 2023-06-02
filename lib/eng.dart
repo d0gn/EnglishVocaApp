@@ -1,6 +1,8 @@
 import 'package:english/favorite.dart';
 import 'package:flutter/material.dart';
 import 'package:english/voca.dart';
+import 'Word.dart';
+import 'sample.dart';
 
 class Eng extends StatefulWidget {
   const Eng({Key? key}) : super(key: key);
@@ -11,7 +13,9 @@ class Eng extends StatefulWidget {
 
 class _EngState extends State<Eng> {
   int _selectedIndex = 0;
-
+  void changevoca(a) {
+    test = a;
+  }
   final List<Widget> _widgetOptions = <Widget>[
     Eng(),
     Favorite(),
@@ -43,6 +47,7 @@ class _EngState extends State<Eng> {
                             context,
                             MaterialPageRoute(builder: (context) => Voca()),
                           );
+                          changevoca(words1);
                         }
                     ),
                   ),
@@ -55,6 +60,7 @@ class _EngState extends State<Eng> {
                             context,
                             MaterialPageRoute(builder: (context) => Voca()),
                           );
+                          changevoca(words2);
                         }
                     ),
                   )
