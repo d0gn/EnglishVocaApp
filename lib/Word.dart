@@ -4,6 +4,6 @@ import 'voca.dart';
 class Word {
   String englishWord;
   String mean;
-
-  Word(this.englishWord, this.mean);
+  String sentence;
+  Word(this.englishWord, this.mean, this.sentence);
 }

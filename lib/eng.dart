@@ -39,9 +39,9 @@ class _EngState extends State<Eng> {
               child: Column(
                 children: [
                   Container(
-                    height: 150, width: 400, color: Colors.red, margin: EdgeInsets.all(15),
+                    height: 150, width: 400, margin: EdgeInsets.all(15),
                     child: ElevatedButton(
-                        child: Text('1번'),
+                        child: Text('Day 01: 백수탈출'),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -52,9 +52,9 @@ class _EngState extends State<Eng> {
                     ),
                   ),
                   Container(
-                    height: 150, width: 400, color: Colors.red, margin: EdgeInsets.all(15),
+                    height: 150, width: 400, margin: EdgeInsets.all(15),
                     child: ElevatedButton(
-                        child: Text('1번'),
+                        child: Text('Day 02: 드레스코드'),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -63,7 +63,59 @@ class _EngState extends State<Eng> {
                           changevoca(words2);
                         }
                     ),
-                  )
+                  ),
+                  Container(
+                    height: 150, width: 400, margin: EdgeInsets.all(15),
+                    child: ElevatedButton(
+                        child: Text('Day 03: 사무의 달인'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Voca()),
+                          );
+                          changevoca(words3);
+                        }
+                    ),
+                  ),
+                  Container(
+                    height: 150, width: 400, margin: EdgeInsets.all(15),
+                    child: ElevatedButton(
+                        child: Text('Day 04: 업무 노하우'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Voca()),
+                          );
+                          changevoca(words4);
+                        }
+                    ),
+                  ),
+                  Container(
+                    height: 150, width: 400, margin: EdgeInsets.all(15),
+                    child: ElevatedButton(
+                        child: Text('Day 05: 비밀병기'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Voca()),
+                          );
+                          changevoca(words5);
+                        }
+                    ),
+                  ),
+                  Container(
+                    height: 150, width: 400, margin: EdgeInsets.all(15),
+                    child: ElevatedButton(
+                        child: Text('Day 06: 쉴 휴'),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Voca()),
+                          );
+                          changevoca(words6);
+                        }
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -73,4 +125,3 @@ class _EngState extends State<Eng> {
   }
 
 }
-// body: 리스트이름[인덱스이름] 이게 중요하다 이게 있어야 바뀐다
